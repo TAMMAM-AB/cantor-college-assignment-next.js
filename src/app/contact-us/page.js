@@ -1,8 +1,9 @@
+import ContactForm from "/src/app/Components/ContactForm";
 const ContactUs = () => {
     return (
       <div>
         <h2>Contact us</h2>
-        <h1><center>ADD A FORM HERE</center></h1>
+        <ContactForm/>
       </div>
     );
   }
