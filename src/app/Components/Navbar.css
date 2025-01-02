@@ -1,0 +1,99 @@
+nav {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* container styling */
+nav {
+    position: relative;
+    background-color: #171717;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* burger icon - visible on mobile */
+.burger {
+    display: block;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* menu styling - mobile */
+menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: #212121; /* a bit lighter */
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: max-height 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+menu.active {
+    max-height: 300px;
+    z-index: 1;
+}
+
+/* link styling - mobile */
+menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-top: 1px solid #B6004C;
+    display: block;
+    transition: background-color 0.15s;
+    border-radius: 5px;
+}
+
+menu li a:hover {
+    background-color: #B6004C;
+}
+
+/* desktop breakpoint */
+@media (min-width: 768px) {
+    /* hide burger icon on desktop */
+    .burger {
+        display: none;
+    }
+
+    /* desktop container adjustments */
+    nav {
+        /* remove extra padding for mobile */
+        padding-bottom: 0;
+    }
+
+    /* horizontal menu - desktop */
+    menu {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        position: static;
+        /* align menu within nav */
+        max-height: none;
+    }
+
+    /* link styling - desktop */
+    menu li {
+        flex: 1; /* Makes each menu item take equal width */
+        display: flex; /* Ensures the <a> inside takes full height */
+    }
+
+    menu li a {
+        padding: 0.5em 1em;
+        border-top: none;
+        margin: 0;
+        height: 100%;
+    }
+}
